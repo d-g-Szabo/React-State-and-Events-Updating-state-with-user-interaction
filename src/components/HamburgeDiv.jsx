@@ -20,6 +20,12 @@ export default function HamburgerDiv(props) {
     setVotes(votes + 1);
     console.log(votes);
   }
+  function removeVote() {
+    setVotes(votes - 1);
+  }
+  function resetVote() {
+    setVotes(0);
+  }
   return (
     <>
       <div className="hamburger-div">
@@ -28,7 +34,8 @@ export default function HamburgerDiv(props) {
         <p>{props.description}</p>
         {/* Add the handleClick function to onClick event */}
         <button onClick={handleClick}>Click to vote!</button>
-        <p>Votes: {votes}</p>
+        <p onClick={resetVote}>Votes: {votes}</p>
+        <button onClick={removeVote}>Click to remove a vote!</button>
       </div>
     </>
   );
